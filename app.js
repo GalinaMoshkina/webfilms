@@ -17,13 +17,14 @@ const library = [
       {
         label: "Русская озвучка",
         shortLabel: "Русский",
-        src: media.pulpFictionRussian
+        embed: media.pulpFictionRussian
       },
       {
         label: "Оригинальная дорожка + русские субтитры",
         shortLabel: "English + субтитры",
         src: media.pulpFictionEnglish,
-        subtitles: "./films/Криминальное чтиво/subtitles-ru.vtt"
+        subtitles: "./films/Криминальное чтиво/subtitles-ru.vtt",
+        externalPage: media.pulpFictionEnglishPage
       }
     ]
   },
@@ -40,8 +41,8 @@ const library = [
     summary:
       "Ограбление пошло не по плану. Выжившие собираются на складе и пытаются понять, кто из них предатель, пока недоверие становится опаснее полиции.",
     sources: [
-      { label: "Часть 1", shortLabel: "Часть 1", src: media.reservoirDogsPart1 },
-      { label: "Часть 2", shortLabel: "Часть 2", src: media.reservoirDogsPart2 }
+      { label: "Часть 1", shortLabel: "Часть 1", embed: media.reservoirDogsPart1 },
+      { label: "Часть 2", shortLabel: "Часть 2", embed: media.reservoirDogsPart2 }
     ]
   },
   {
@@ -59,7 +60,7 @@ const library = [
     sources: Array.from({ length: 5 }, (_, index) => ({
       label: `Эпизод ${index + 1}`,
       shortLabel: `${index + 1}`,
-      src: media[`cunkEpisode${index + 1}`]
+      embed: media[`cunkEpisode${index + 1}`]
     }))
   }
 ];
@@ -126,6 +127,18 @@ function sourceButtons(item, selectedIndex) {
 }
 
 function videoTemplate(source) {
+  if (source?.embed) {
+    return `
+      <iframe
+        src="${escapeHtml(source.embed)}"
+        title="${escapeHtml(source.label)}"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen
+        loading="eager"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>`;
+  }
+
   if (!source?.src) {
     return `<div class="player-message"><strong>Видео ещё не подключено</strong><span>Укажи его адрес в media-config.js</span></div>`;
   }
@@ -169,8 +182,10 @@ function renderWatch(item, selectedIndex = 0) {
             <div>${sourceButtons(item, selectedIndex)}</div>
           </div>
           ${
-            location.hostname.endsWith("github.io") && !isRemoteSource(source.src)
-              ? `<p class="hosting-warning">Для просмотра на GitHub Pages замени локальные адреса видео на прямые HTTPS-ссылки в <code>media-config.js</code>.</p>`
+            location.hostname.endsWith("github.io") && source.src && !isRemoteSource(source.src)
+              ? `<p class="hosting-warning">Английская версия с нашими субтитрами использует локальный MP4. 
+                  <a href="${escapeHtml(source.externalPage || "#")}" target="_blank" rel="noopener noreferrer">Открыть присланную страницу</a>.
+                  Чтобы смотреть прямо здесь с субтитрами, нужен прямой HTTPS-адрес видео.</p>`
               : ""
           }
         </div>
