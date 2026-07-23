@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#120d0d">
+    <meta name="description" content="Личная фильмотека">
+    <title>После титров</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#/" aria-label="На главную">
+        <span class="brand-mark">◆</span>
+        <span>После титров</span>
+      </a>
+      <span class="header-note">личная фильмотека</span>
+    </header>
+
+    <main id="app"></main>
+
+    <footer class="soundtrack" id="soundtrack">
+      <div class="record" aria-hidden="true"><span></span></div>
+      <div class="track-copy">
+        <small>Музыка для просмотра</small>
+        <strong id="track-title">Добавь media/music/theme.mp3</strong>
+      </div>
+      <button class="round-button" id="music-toggle" type="button" aria-label="Включить музыку" disabled>
+        <span id="music-icon">▶</span>
+      </button>
+      <label class="volume">
+        <span class="sr-only">Громкость музыки</span>
+        <input id="music-volume" type="range" min="0" max="1" step="0.05" value="0.45" disabled>
+      </label>
+      <audio id="music-player" loop preload="metadata"></audio>
+    </footer>
+
+    <script src="./media-config.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
