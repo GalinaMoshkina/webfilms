@@ -133,8 +133,8 @@ const library = [
     quote: "Грех — это просто еще один способ почувствовать себя живым",
     summary: "пиздец ебаный..........",
     sources: [
-      source("Русская озвучка · плеер 1", "Плеер 1", media.darkHabitsRussian1),
-      source("Русская озвучка · плеер 2", "Плеер 2", media.darkHabitsRussian2)
+      source("Русская озвучка 1", "Русский-1", media.darkHabitsRussian1),
+      source("Русская озвучка 2", "Русский-2", media.darkHabitsRussian2)
     ]
   },
   {
@@ -152,8 +152,8 @@ const library = [
     quote: "Я хочу все. И сказку тоже",
     summary: "Успешный финансовый магнат Эдвард Льюис решает нанять случайную уличную знакомую, чтобы она сопровождала его на важных деловых ужинах в течение недели. Это прагматичное соглашение неожиданно начинает менять привычную жизнь обоих.",
     sources: [
-      source("Русская озвучка · плеер 1", "Плеер 1", media.prettyWomanRussian1),
-      source("Русская озвучка · плеер 2", "Плеер 2", media.prettyWomanRussian2)
+      source("Русская озвучка 1", "Русский-1", media.prettyWomanRussian1),
+      source("Русская озвучка 2", "Русский-2", media.prettyWomanRussian2)
     ]
   },
   {
@@ -190,9 +190,9 @@ const library = [
     quote: "Ты не можешь контролировать то, кого ты любишь. Любовь сама выбирает тебя",
     summary: "Бунтующая дочь сенатора Аннабель попадает в закрытую католическую школу-интернат, где сразу начинает нарушать строгие правила. Внимание девушки привлекает молодая учительница поэзии Симона, которая пытается направить сложного подростка в мирное русло.",
     sources: [
-      source("Русская озвучка · 240p", "VK · 240p", media.lovingAnnabelleRussian1),
-      source("Русская озвучка · 360p", "VK · 360p", media.lovingAnnabelleRussian2),
-      source("Русская озвучка · 720p", "OK · 720p", media.lovingAnnabelleRussianOk)
+      source("Русская озвучка 1", "Русский-1", media.lovingAnnabelleRussian1),
+      source("Русская озвучка 2", "Русский-2", media.lovingAnnabelleRussian2),
+      source("Русская озвучка 3", "Русский-3", media.lovingAnnabelleRussianOk)
     ]
   },
   {
@@ -271,8 +271,8 @@ const library = [
     quote: "Стоит мне только подумать, что я завязал, как они снова затягивают меня обратно!",
     summary: "Постаревший Дон Майкл Корлеоне стремится сделать бизнес семьи полностью законным и искупить прошлые грехи перед церковью и обществом. Однако старые связи и амбиции молодого поколения клана постоянно создают новые препятствия.",
     sources: [
-      source("Русская озвучка · плеер 1", "Русский · 1", media.godfather3Russian1),
-      source("Русская озвучка · плеер 2", "Русский · 2", media.godfather3Russian2),
+      source("Русская озвучка 1", "Русский-1", media.godfather3Russian1),
+      source("Русская озвучка 2", "Русский-2", media.godfather3Russian2),
       source("Оригинальная дорожка · Rutube", "English", media.godfather3English, "en")
     ]
   }
@@ -318,7 +318,7 @@ function cardTemplate(item, index) {
 }
 
 function renderHome() {
-  document.title = "Выбери историю";
+  document.title = "Фильмотека";
   app.innerHTML = `
     <section class="hero">
       <h1>Выбери историю<br><em>на этот вечер</em></h1>
@@ -394,7 +394,7 @@ function renderWatch(item, selectedIndex = 0) {
   document.title = currentTitle;
 
   app.innerHTML = `
-    <section class="watch-page ${item.art}" style="--accent:${item.accent}">
+    <section class="watch-page film-${item.id} ${item.art} ${currentTitle.length > 17 ? "long-title" : ""}" style="--accent:${item.accent}">
       <div class="watch-backdrop" aria-hidden="true">
         <span>${escapeHtml(item.originalTitle)}</span>
       </div>
@@ -442,6 +442,7 @@ function switchSource(item, index) {
   document.querySelector("#source-title").textContent = source.label;
   const currentTitle = localizedTitle(item, source);
   document.querySelector("#watch-title").textContent = currentTitle;
+  document.querySelector(".watch-page").classList.toggle("long-title", currentTitle.length > 17);
   document.title = currentTitle;
   document.querySelectorAll("[data-source]").forEach((button) => {
     button.classList.toggle("active", Number(button.dataset.source) === index);
