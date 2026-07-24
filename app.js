@@ -311,13 +311,10 @@ function cardTemplate(item, index) {
 }
 
 function renderHome() {
-  document.title = "После титров — личная фильмотека";
+  document.title = "Выбери историю";
   app.innerHTML = `
     <section class="hero">
-      <p class="kicker">Сегодня в программе</p>
       <h1>Выбери историю<br><em>на этот вечер</em></h1>
-      <p class="hero-copy">Фильмы, сериалы и несколько личных слов — наведи на карточку, чтобы узнать больше.</p>
-      <div class="scroll-hint"><span></span>листай</div>
     </section>
     <section class="library" aria-label="Фильмотека">
       ${library.map(cardTemplate).join("")}
@@ -387,7 +384,7 @@ function localizedTitle(item, source) {
 function renderWatch(item, selectedIndex = 0) {
   const source = item.sources[selectedIndex] || item.sources[0];
   const currentTitle = localizedTitle(item, source);
-  document.title = `${currentTitle} — После титров`;
+  document.title = currentTitle;
 
   app.innerHTML = `
     <section class="watch-page ${item.art}" style="--accent:${item.accent}">
@@ -438,7 +435,7 @@ function switchSource(item, index) {
   document.querySelector("#source-title").textContent = source.label;
   const currentTitle = localizedTitle(item, source);
   document.querySelector("#watch-title").textContent = currentTitle;
-  document.title = `${currentTitle} — После титров`;
+  document.title = currentTitle;
   document.querySelectorAll("[data-source]").forEach((button) => {
     button.classList.toggle("active", Number(button.dataset.source) === index);
   });
