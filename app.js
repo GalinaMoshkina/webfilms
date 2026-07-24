@@ -1,4 +1,5 @@
 const media = window.MEDIA || {};
+const ASSET_VERSION = "20260724-2";
 
 const source = (label, shortLabel, embed, language = "ru") => ({
   label,
@@ -289,14 +290,20 @@ function escapeHtml(value = "") {
     .replaceAll('"', "&quot;");
 }
 
+function versionedAsset(path = "") {
+  if (!path || /^https?:\/\//i.test(path)) return path;
+  return `${path}${path.includes("?") ? "&" : "?"}v=${ASSET_VERSION}`;
+}
+
 function cardTemplate(item, index) {
   return `
     <a class="film-card ${item.art}" href="#/watch/${item.id}"
+      data-search="${escapeHtml(normalizeSearch(`${item.title} ${item.originalTitle} ${item.year} ${item.type}`))}"
       style="--accent:${item.accent}; --delay:${index * 80}ms"
       aria-label="Смотреть ${escapeHtml(item.title)}">
       <div class="card-number">${String(index + 1).padStart(2, "0")}</div>
       <div class="poster-art" aria-hidden="true">
-        ${item.poster ? `<img src="${escapeHtml(item.poster)}" alt="">` : ""}
+        <img src="${escapeHtml(versionedAsset(item.poster))}" alt="" loading="eager">
         <span class="poster-word">${escapeHtml(item.title)}</span>
       </div>
       <div class="card-main">
@@ -306,7 +313,7 @@ function cardTemplate(item, index) {
         <p class="hover-summary">${escapeHtml(item.summary)}</p>
         <p class="personal-note">«${escapeHtml(item.quote)}»</p>
       </div>
-      <span class="card-arrow" aria-hidden="true">↗</span>
+      <span class="card-arrow" aria-hidden="true"></span>
     </a>`;
 }
 
@@ -539,11 +546,13 @@ function setupMusic() {
   });
   player.addEventListener("play", () => {
     icon.textContent = "❚❚";
+    toggle.classList.add("playing");
     toggle.setAttribute("aria-label", "Остановить музыку");
     document.querySelector(".record").classList.add("playing");
   });
   player.addEventListener("pause", () => {
     icon.textContent = "▶";
+    toggle.classList.remove("playing");
     toggle.setAttribute("aria-label", "Включить музыку");
     document.querySelector(".record").classList.remove("playing");
   });
@@ -570,10 +579,8 @@ function applySearch(value) {
   if (!cards.length) return;
 
   let visible = 0;
-  cards.forEach((card, index) => {
-    const item = library[index];
-    const haystack = normalizeSearch(`${item.title} ${item.originalTitle} ${item.year} ${item.type}`);
-    const matches = !query || haystack.includes(query);
+  cards.forEach((card) => {
+    const matches = !query || card.dataset.search.includes(query);
     card.hidden = !matches;
     if (matches) visible += 1;
   });
