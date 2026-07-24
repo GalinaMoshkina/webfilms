@@ -690,7 +690,8 @@ body.watching .watch-heading > p:last-child {
   width: 72px;
   height: 72px;
   border: 0;
-  border-radius: 0;
+  border-radius: 50%;
+  overflow: hidden;
   background: url("./ui-assets/play.png") center / contain no-repeat;
   font-size: 0;
 }
