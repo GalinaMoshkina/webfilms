@@ -20,11 +20,16 @@ const library = [
         embed: media.pulpFictionRussian
       },
       {
-        label: "Оригинальная дорожка + русские субтитры",
-        shortLabel: "English + субтитры",
+        label: "Оригинальная дорожка · VK",
+        shortLabel: "English онлайн",
+        embed: media.pulpFictionEnglishEmbed,
+        iframeNotice: "VK-плеер не позволяет подключить внешний файл субтитров. Для версии с русскими субтитрами выбери соседний локальный плеер."
+      },
+      {
+        label: "Оригинальная дорожка + русские субтитры · локально",
+        shortLabel: "English + субтитры (локально)",
         src: media.pulpFictionEnglish,
-        subtitles: "./films/Криминальное чтиво/subtitles-ru.vtt",
-        externalPage: media.pulpFictionEnglishPage
+        subtitles: "./films/Криминальное чтиво/subtitles-ru.vtt"
       }
     ]
   },
@@ -132,7 +137,7 @@ function videoTemplate(source) {
       <iframe
         src="${escapeHtml(source.embed)}"
         title="${escapeHtml(source.label)}"
-        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock"
         allowfullscreen
         loading="eager"
         referrerpolicy="strict-origin-when-cross-origin">
@@ -183,9 +188,10 @@ function renderWatch(item, selectedIndex = 0) {
           </div>
           ${
             location.hostname.endsWith("github.io") && source.src && !isRemoteSource(source.src)
-              ? `<p class="hosting-warning">Английская версия с нашими субтитрами использует локальный MP4. 
-                  <a href="${escapeHtml(source.externalPage || "#")}" target="_blank" rel="noopener noreferrer">Открыть присланную страницу</a>.
-                  Чтобы смотреть прямо здесь с субтитрами, нужен прямой HTTPS-адрес видео.</p>`
+              ? `<p class="hosting-warning">Английская версия с нашими субтитрами использует локальный MP4 и недоступна на GitHub Pages.
+                  Онлайн-версию можно выбрать выше, но VK не разрешает подключить к своему iframe наш файл <code>.vtt</code>.</p>`
+              : source.iframeNotice
+                ? `<p class="hosting-warning">${escapeHtml(source.iframeNotice)}</p>`
               : ""
           }
         </div>
@@ -210,6 +216,19 @@ function switchSource(item, index) {
     button.classList.toggle("active", Number(button.dataset.source) === index);
   });
   activeVideo = document.querySelector("#film-player");
+
+  const oldNotice = document.querySelector(".hosting-warning");
+  if (oldNotice) oldNotice.remove();
+  const notice =
+    location.hostname.endsWith("github.io") && source.src && !isRemoteSource(source.src)
+      ? "Английская версия с нашими субтитрами использует локальный MP4 и недоступна на GitHub Pages. Онлайн-версия находится в соседнем плеере."
+      : source.iframeNotice;
+  if (notice) {
+    const message = document.createElement("p");
+    message.className = "hosting-warning";
+    message.textContent = notice;
+    document.querySelector(".player-shell").append(message);
+  }
 }
 
 function route() {
