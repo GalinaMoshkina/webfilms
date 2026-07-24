@@ -25,6 +25,7 @@ const library = [
     accent: "#e4a934",
     art: "pulp",
     poster: "./films/Криминальное чтиво/Обложка_криминальное_чтиво.jpg",
+    music: [{ title: "Misirlou", artist: "Dick Dale & His Del-Tones", src: "./films/Криминальное чтиво/Dick Dale & His Del Tones - Misirlou.mp3" }],
     quote: "Идеальное кино, чтобы снова полюбить разговоры ни о чём.",
     summary:
       "Две истории о гангстерах, роковых совпадениях и людях, которые очень стараются выбраться из неприятностей — обычно ещё глубже в них погружаясь.",
@@ -70,6 +71,8 @@ const library = [
     runtime: "5 эпизодов",
     accent: "#4a89a1",
     art: "cunk",
+    poster: "./films/Канк на Земле/Обложка_канк_на_земле.webp",
+    music: [{ title: "Pump Up the Jam", artist: "Technotronic", src: "./films/Канк на Земле/Technotronic - Pump up the Jam.mp3" }],
     quote: "Вся история человечества — уверенно, красиво и совершенно неправильно.",
     summary:
       "Филомена Канк задаёт экспертам главные вопросы цивилизации и с невозмутимым лицом превращает документальный сериал в очень британскую комедию.",
@@ -98,6 +101,7 @@ const library = [
   {
     id: "once-upon-a-time-in-hollywood", title: "Однажды в… Голливуде", originalTitle: "Once Upon a Time... in Hollywood", year: "2019",
     type: "Фильм", runtime: "2 ч 41 мин", accent: "#d68c3a", art: "cunk",
+    poster: "./films/Однажды в… Голливуде/Обложка_однажды_в_голливуде.webp",
     quote: "Голливуд, каким он был — или каким его хочется помнить.",
     summary: "Угасающая звезда телевестернов и его дублёр ищут своё место в стремительно меняющемся Голливуде 1969 года.",
     sources: [source("Русская озвучка", "Русский", media.onceHollywoodRussian)]
@@ -105,6 +109,7 @@ const library = [
   {
     id: "inglourious-basterds", title: "Бесславные ублюдки", originalTitle: "Inglourious Basterds", year: "2009",
     type: "Фильм", runtime: "2 ч 33 мин", accent: "#a43a2f", art: "dogs",
+    poster: "./films/Бесславные ублюдки/Обложка_бесславные_ублюдки.jpg",
     quote: "История переписывается в кинотеатре.",
     summary: "Отряд американских солдат и хозяйка парижского кинотеатра независимо друг от друга готовят расплату нацистскому руководству.",
     sources: [
@@ -115,6 +120,7 @@ const library = [
   {
     id: "the-room-next-door", title: "Комната по соседству", originalTitle: "The Room Next Door", year: "2024",
     type: "Фильм", runtime: "1 ч 47 мин", accent: "#477c73", art: "cunk",
+    poster: "./films/Комната по соседству/Обложка_комната_по_соседству.jpg",
     quote: "Иногда дружба — это просто остаться рядом.",
     summary: "Две давние подруги встречаются вновь и проводят вместе время, которое заставляет их по-новому взглянуть на жизнь, смерть и близость.",
     sources: [source("Русская озвучка", "Русский", media.roomNextDoorRussian)]
@@ -122,6 +128,7 @@ const library = [
   {
     id: "dark-habits", title: "Нескромное обаяние порока", originalTitle: "Entre tinieblas", year: "1983",
     type: "Фильм", runtime: "1 ч 54 мин", accent: "#a95d73", art: "pulp",
+    poster: "./films/Нескромное обаяние порока/Обложка_нескромное_обаяние_порока.jpg",
     quote: "Святость, порок и Альмодовар в одном монастыре.",
     summary: "Певица кабаре скрывается в необычном монастыре, где сестры куда больше интересуются человеческими слабостями, чем строгими правилами.",
     sources: [
@@ -132,6 +139,7 @@ const library = [
   {
     id: "the-drama", title: "Вот это драма!", originalTitle: "The Drama", year: "Скоро",
     type: "Трейлер", runtime: "Трейлер", accent: "#6f83a5", art: "cunk",
+    poster: "./films/Вот это драма!/Обложка_вот_это_драма.jpg",
     quote: "Пока только первый взгляд — полный фильм ещё впереди.",
     summary: "Страница будущего фильма: сейчас здесь доступен англоязычный трейлер, а полноценный плеер появится после релиза.",
     sources: [source("Трейлер на английском", "English · трейлер", media.theDramaTrailer, "en")]
@@ -139,6 +147,7 @@ const library = [
   {
     id: "pretty-woman", title: "Красотка", originalTitle: "Pretty Woman", year: "1990",
     type: "Фильм", runtime: "1 ч 59 мин", accent: "#d56a76", art: "pulp",
+    poster: "./films/Красотка/Обложка_красотка.jpeg",
     quote: "Сказка о любви на бульваре Голливуда.",
     summary: "Случайная встреча бизнесмена и девушки по имени Вивиан превращает деловое соглашение в историю, которой никто из них не ожидал.",
     sources: [
@@ -149,6 +158,7 @@ const library = [
   {
     id: "eat-pray-love", title: "Ешь, молись, люби", originalTitle: "Eat Pray Love", year: "2010",
     type: "Фильм", runtime: "2 ч 13 мин", accent: "#cb7b4d", art: "cunk",
+    poster: "./films/Ешь, молись, люби/Обложка_ешь_молись_люби.jpeg",
     quote: "Иногда, чтобы найти себя, нужно уехать очень далеко.",
     summary: "После развода Лиз отправляется через Италию, Индию и Бали, заново учась получать удовольствие, искать равновесие и любить.",
     sources: [source("Русская озвучка", "Русский", media.eatPrayLoveRussian)]
@@ -156,6 +166,7 @@ const library = [
   {
     id: "rrrrr", title: "Миллион лет до нашей эры", originalTitle: "RRRrrrr!!!", year: "2004",
     type: "Фильм", runtime: "1 ч 38 мин", accent: "#aa6c36", art: "dogs",
+    poster: "./films/Миллион лет до нашей эры/Обложка_миллион_лет_до_нашей_эры.jpeg",
     quote: "Первое убийство в истории человечества. Возможно.",
     summary: "Два доисторических племени спорят о секрете шампуня, пока первое в истории преступление требует первого в истории расследования.",
     sources: [source("Русская озвучка", "Русский", media.rrrrrRussian)]
@@ -163,6 +174,7 @@ const library = [
   {
     id: "below-her-mouth", title: "Ниже её губ", originalTitle: "Below Her Mouth", year: "2016",
     type: "Фильм", runtime: "1 ч 34 мин", accent: "#9c5262", art: "pulp",
+    poster: "./films/Ниже её губ/Обложка_ниже_ее_губ.jpg",
     quote: "Одна встреча меняет всё, что казалось решённым.",
     summary: "Неожиданное знакомство заставляет Жасмин пересмотреть привычную жизнь и чувства, которые она прежде не позволяла себе признать.",
     sources: [
@@ -173,6 +185,7 @@ const library = [
   {
     id: "loving-annabelle", title: "Полюбить Аннабель", originalTitle: "Loving Annabelle", year: "2006",
     type: "Фильм", runtime: "1 ч 16 мин", accent: "#596d87", art: "cunk",
+    poster: "./films/Полюбить Аннабель/Обложка_полюбить_аннабель.jpeg",
     quote: "Чувства, которым нельзя найти безопасное место.",
     summary: "Новая ученица католической школы сближается с преподавательницей литературы, ставя обеих перед трудным и опасным выбором.",
     sources: [
@@ -184,6 +197,7 @@ const library = [
   {
     id: "ammonite", title: "Аммонит", originalTitle: "Ammonite", year: "2020",
     type: "Фильм", runtime: "1 ч 58 мин", accent: "#587883", art: "cunk",
+    poster: "./films/Аммонит/Обложка_аммонит.jpeg",
     quote: "На холодном берегу две жизни начинают оттаивать.",
     summary: "Палеонтолог Мэри Эннинг берёт под опеку молодую женщину, и их сдержанное знакомство постепенно становится глубокой близостью.",
     sources: [
@@ -194,6 +208,7 @@ const library = [
   {
     id: "knives-out", title: "Достать ножи", originalTitle: "Knives Out", year: "2019",
     type: "Фильм", runtime: "2 ч 10 мин", accent: "#a48246", art: "pulp",
+    poster: "./films/Достать ножи 1/Обложка_достать_ножи_1.jpg",
     quote: "У каждого в этой семье есть мотив.",
     summary: "Детектив Бенуа Блан расследует смерть знаменитого писателя, окружённого большой семьёй, где каждый говорит не всю правду.",
     sources: [
@@ -204,6 +219,7 @@ const library = [
   {
     id: "glass-onion", title: "Достать ножи: Стеклянная луковица", originalTitle: "Glass Onion: A Knives Out Mystery", year: "2022",
     type: "Фильм", runtime: "2 ч 19 мин", accent: "#d28e3f", art: "cunk",
+    poster: "./films/Достать ножи 2/Обложка_достать_ножи_2.jpg",
     quote: "Самая прозрачная загадка может оказаться самой запутанной.",
     summary: "Бенуа Блан отправляется на частный остров миллиардера, где игра в убийство быстро становится настоящим расследованием.",
     sources: [
@@ -214,6 +230,7 @@ const library = [
   {
     id: "wake-up-dead-man", title: "Достать ножи: Воскрешение покойника", originalTitle: "Wake Up Dead Man: A Knives Out Mystery", year: "2025",
     type: "Фильм", runtime: "2 ч 24 мин", accent: "#705644", art: "dogs",
+    poster: "./films/Достать ножи 3/Обложка_достать_ножи_3.jpeg",
     quote: "У Бенуа Блана новое невозможное дело.",
     summary: "Третья загадка Бенуа Блана приводит детектива к новому кругу подозреваемых и убийству, которое не желает складываться в простую картину.",
     sources: [
@@ -224,6 +241,8 @@ const library = [
   {
     id: "the-godfather", title: "Крёстный отец", originalTitle: "The Godfather", year: "1972",
     type: "Фильм", runtime: "2 ч 55 мин", accent: "#8a5c3d", art: "dogs",
+    poster: "./films/Крестный отец 1/Обложка_крестный_отец_1.jpeg",
+    music: [{ title: "The Godfather Theme Song", artist: "Nino Rota", src: "./films/Крестный отец 1/The Godfather Theme Song.mp3" }],
     quote: "Семья, власть и предложение, от которого нельзя отказаться.",
     summary: "Майкл Корлеоне пытается держаться в стороне от семейного дела, но обстоятельства постепенно ведут его к центру криминальной империи.",
     sources: [
@@ -234,6 +253,8 @@ const library = [
   {
     id: "the-godfather-part-ii", title: "Крёстный отец 2", originalTitle: "The Godfather Part II", year: "1974",
     type: "Фильм", runtime: "3 ч 22 мин", accent: "#725345", art: "dogs",
+    poster: "./films/Крестный отец 2/Обложка_крестный_отец_2.jpg",
+    music: [{ title: "The Godfather Theme Song", artist: "Nino Rota", src: "./films/Крестный отец 2/The Godfather Theme Song.mp3" }],
     quote: "Империя растёт, а семья становится всё меньше.",
     summary: "История молодого Вито Корлеоне переплетается с правлением Майкла, который расширяет власть ценой всё большей изоляции.",
     sources: [
@@ -244,6 +265,8 @@ const library = [
   {
     id: "the-godfather-part-iii", title: "Крёстный отец 3", originalTitle: "The Godfather Part III", year: "1990",
     type: "Фильм", runtime: "2 ч 42 мин", accent: "#65443b", art: "dogs",
+    poster: "./films/Крестный отец 3/Обложка_крестный_отец_3.jpeg",
+    music: [{ title: "The Godfather Theme Song", artist: "Nino Rota", src: "./films/Крестный отец 3/The Godfather Theme Song.mp3" }],
     quote: "Прошлое не отпускает даже тех, кто готов заплатить.",
     summary: "Постаревший Майкл Корлеоне ищет законный путь для семьи и искупление, но старые связи снова затягивают его в насилие.",
     sources: [
@@ -256,6 +279,7 @@ const library = [
 
 const app = document.querySelector("#app");
 let activeVideo = null;
+let musicController = null;
 
 function escapeHtml(value = "") {
   return String(value)
@@ -297,7 +321,9 @@ function renderHome() {
     </section>
     <section class="library" aria-label="Фильмотека">
       ${library.map(cardTemplate).join("")}
+      <p class="no-results" id="no-results" hidden>Ничего не нашлось. Попробуй другое название.</p>
     </section>`;
+  applySearch(document.querySelector("#film-search").value);
 }
 
 function isRemoteSource(src = "") {
@@ -437,7 +463,12 @@ function route() {
   window.scrollTo(0, 0);
   const match = location.hash.match(/^#\/watch\/([^/]+)/);
   const item = match && library.find((film) => film.id === match[1]);
+  document.querySelector("#search-box").classList.toggle("hidden", Boolean(item));
   item ? renderWatch(item) : renderHome();
+  musicController?.setPlaylist(
+    item?.music?.length ? item.music : media.generalMusic || [],
+    item?.music?.length ? item.title : "Общая подборка"
+  );
 }
 
 function setupMusic() {
@@ -446,13 +477,57 @@ function setupMusic() {
   const volume = document.querySelector("#music-volume");
   const icon = document.querySelector("#music-icon");
   const title = document.querySelector("#track-title");
+  const artist = document.querySelector("#track-artist");
+  const context = document.querySelector("#track-context");
+  const previous = document.querySelector("#music-prev");
+  const next = document.querySelector("#music-next");
+  let playlist = [];
+  let currentIndex = 0;
+  let playlistKey = "";
 
-  if (!media.soundtrack) return;
-  player.src = media.soundtrack;
   player.volume = Number(volume.value);
-  title.textContent = media.soundtrackTitle || "Музыка для просмотра";
-  toggle.disabled = false;
-  volume.disabled = false;
+
+  function showTrack() {
+    const track = playlist[currentIndex];
+    if (!track) {
+      player.removeAttribute("src");
+      player.load();
+      title.textContent = "Музыка скоро появится";
+      artist.textContent = "";
+      toggle.disabled = true;
+      previous.disabled = true;
+      next.disabled = true;
+      volume.disabled = true;
+      return;
+    }
+    player.src = track.src;
+    title.textContent = track.title;
+    artist.textContent = track.artist || "";
+    toggle.disabled = false;
+    volume.disabled = false;
+    previous.disabled = playlist.length < 2;
+    next.disabled = playlist.length < 2;
+  }
+
+  function moveTrack(direction, autoplay = true) {
+    if (!playlist.length) return;
+    currentIndex = (currentIndex + direction + playlist.length) % playlist.length;
+    showTrack();
+    if (autoplay) player.play().catch(() => {});
+  }
+
+  function setPlaylist(tracks, label) {
+    const nextKey = tracks.map((track) => track.src).join("|");
+    context.textContent = label || "Сейчас играет";
+    if (nextKey === playlistKey) return;
+
+    const wasPlaying = !player.paused;
+    playlist = tracks;
+    playlistKey = nextKey;
+    currentIndex = 0;
+    showTrack();
+    if (wasPlaying && playlist.length) player.play().catch(() => {});
+  }
 
   toggle.addEventListener("click", async () => {
     if (player.paused) {
@@ -476,15 +551,45 @@ function setupMusic() {
     document.querySelector(".record").classList.remove("playing");
   });
   player.addEventListener("error", () => {
-    toggle.disabled = true;
-    volume.disabled = true;
-    title.textContent = "Добавь media/music/theme.mp3";
+    title.textContent = "Не удалось открыть композицию";
   });
+  player.addEventListener("ended", () => moveTrack(1));
+  previous.addEventListener("click", () => moveTrack(-1));
+  next.addEventListener("click", () => moveTrack(1));
   volume.addEventListener("input", () => {
     player.volume = Number(volume.value);
   });
+
+  return { setPlaylist };
+}
+
+function normalizeSearch(value) {
+  return value.toLocaleLowerCase("ru").replaceAll("ё", "е").trim();
+}
+
+function applySearch(value) {
+  const query = normalizeSearch(value);
+  const cards = document.querySelectorAll(".film-card");
+  if (!cards.length) return;
+
+  let visible = 0;
+  cards.forEach((card, index) => {
+    const item = library[index];
+    const haystack = normalizeSearch(`${item.title} ${item.originalTitle} ${item.year} ${item.type}`);
+    const matches = !query || haystack.includes(query);
+    card.hidden = !matches;
+    if (matches) visible += 1;
+  });
+  document.querySelector("#no-results").hidden = visible > 0;
+}
+
+function setupSearch() {
+  const input = document.querySelector("#film-search");
+  input.addEventListener("input", () => applySearch(input.value));
+  input.addEventListener("search", () => applySearch(input.value));
 }
 
 window.addEventListener("hashchange", route);
-setupMusic();
+setupSearch();
+musicController = setupMusic();
 route();

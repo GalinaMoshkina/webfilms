@@ -49,6 +49,16 @@ window.MEDIA = {
   godfather3Russian2: "https://vkvideo.ru/video_ext.php?oid=-239736027&id=456239040&hash=57319438e9ee47db&hd=4",
   godfather3English: "https://rutube.ru/play/embed/acd211205fe7df10c840df1cffbc8255/?skinColor=D57700",
 
-  soundtrack: "./media/music/theme.mp3",
-  soundtrackTitle: "Музыка для просмотра"
+  generalMusic: [
+    {
+      title: "Deborah's Theme",
+      artist: "Ennio Morricone",
+      src: "./general_music/Ennio Morricone — Deborah's Theme.mp3"
+    },
+    {
+      title: "On the Nature of Daylight",
+      artist: "Max Richter",
+      src: "./general_music/Max Richter — On the Nature of Daylight.mp3"
+    }
+  ]
 };
