@@ -601,7 +601,8 @@ body::after { display: none; }
   width: 76px;
   height: 76px;
   background: url("./ui-assets/record.png") center / contain no-repeat;
-  border-radius: 0;
+  border-radius: 50%;
+  overflow: hidden;
   box-shadow: none;
 }
 .record span { display: none; }
