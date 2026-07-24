@@ -551,14 +551,47 @@ body::after { right: 0; clip-path: polygon(0 0, 100% 0, 100% 100%, 32% 100%); tr
 .grain { display: none; }
 body {
   background-color: #080706;
-  background-image: url("./фон_сайта.png");
-  background-position: left top;
-  background-size: auto 100vh;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-image:
+    linear-gradient(to bottom, transparent 0, transparent 52vh, #080706 105vh),
+    url("./фон_сайта.png");
+  background-position: left top, left top;
+  background-size: 100% 108vh, 100% auto;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: scroll, scroll;
+  position: relative;
 }
-body::before,
-body::after { display: none; }
+body::before { display: none; }
+body::after {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: auto;
+  right: 0;
+  bottom: 108px;
+  width: min(520px, 38vw);
+  height: min(620px, 52vw);
+  pointer-events: none;
+  opacity: .9;
+  background: url("./ui-assets/seats.png") right bottom / contain no-repeat;
+  clip-path: none;
+  filter: none;
+  transform: none;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0, #000 42%),
+    linear-gradient(to bottom, transparent 0, #000 34%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0, #000 42%),
+    linear-gradient(to bottom, transparent 0, #000 34%);
+  mask-composite: intersect;
+}
+
+body.watching .site-header { display: none; }
+body.watching .watch-page { min-height: 100vh; }
+body.watching .watch-backdrop {
+  position: absolute;
+  inset: 0;
+}
 
 .search-box img {
   width: 26px;
@@ -660,7 +693,17 @@ body::after { display: none; }
 }
 
 @media (max-width: 760px) {
-  body { background-size: auto 100vh; }
+  body {
+    background-size: 100% 100vh, auto 100vh;
+    background-position: left top, left top;
+  }
+  body.watching { background-size: 100% 100vh, auto 100vh; }
+  body::after {
+    bottom: 74px;
+    width: 70vw;
+    height: 76vw;
+    opacity: .7;
+  }
   .hero {
     width: calc(100% - 36px);
     margin-left: 18px;

@@ -467,6 +467,7 @@ function route() {
   window.scrollTo(0, 0);
   const match = location.hash.match(/^#\/watch\/([^/]+)/);
   const item = match && library.find((film) => film.id === match[1]);
+  document.body.classList.toggle("watching", Boolean(item));
   document.querySelector("#search-box").classList.toggle("hidden", Boolean(item));
   item ? renderWatch(item) : renderHome();
   musicController?.setPlaylist(
