@@ -512,10 +512,18 @@ body::after { right: 0; clip-path: polygon(0 0, 100% 0, 100% 100%, 32% 100%); tr
   transform: translateY(-1px);
 }
 .film-card.watched {
-  box-shadow: inset 2px 0 color-mix(in srgb, var(--accent) 75%, white);
+  box-shadow:
+    inset 3px 0 color-mix(in srgb, var(--accent) 82%, white),
+    0 0 44px color-mix(in srgb, var(--accent) 28%, transparent);
 }
 .film-card.watched::before {
-  opacity: .2;
+  background:
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--accent) 68%, white) 0,
+      color-mix(in srgb, var(--accent) 32%, transparent) 34%,
+      transparent 78%);
+  mix-blend-mode: screen;
+  opacity: .34;
   transform: none;
 }
 .film-card.watched .watched-toggle {
@@ -525,8 +533,12 @@ body::after { right: 0; clip-path: polygon(0 0, 100% 0, 100% 100%, 32% 100%); tr
 .film-card.watched:hover,
 .film-card.watched:focus-visible {
   box-shadow:
-    inset 3px 0 var(--accent),
-    0 0 54px color-mix(in srgb, var(--accent) 30%, transparent);
+    inset 4px 0 color-mix(in srgb, var(--accent) 78%, white),
+    0 0 64px color-mix(in srgb, var(--accent) 46%, transparent);
+}
+.film-card.watched:hover::before,
+.film-card.watched:focus-visible::before {
+  opacity: .52;
 }
 
 .soundtrack {

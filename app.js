@@ -122,7 +122,7 @@ const library = [
   },
   {
     id: "the-room-next-door", title: "Комната по соседству", originalTitle: "The Room Next Door", year: "2024",
-    type: "Фильм", runtime: "1 ч 47 мин", accent: "#477c73", art: "cunk",
+    type: "Фильм", runtime: "1 ч 47 мин", accent: "#9a6b4e", art: "cunk",
     poster: "./films/Комната по соседству/Обложка_комната_по_соседству.jpg",
     quote: "Смерть — это не конец, если рядом есть тот, кто помнит твою радость",
     summary: "Писательница Ингрид и военный корреспондент Марта были близкими подругами в молодости, но жизнь развела их. Спустя много лет они случайно встречаются вновь при весьма непростых обстоятельствах, которые заставляют их вспомнить прошлое.",
@@ -210,7 +210,7 @@ const library = [
   },
   {
     id: "knives-out", title: "Достать ножи", originalTitle: "Knives Out", year: "2019",
-    type: "Фильм", runtime: "2 ч 10 мин", accent: "#a48246", art: "pulp",
+    type: "Фильм", runtime: "2 ч 10 мин", accent: "#5f9fc3", art: "pulp",
     poster: "./films/Достать ножи 1/Обложка_достать_ножи_1.jpg",
     music: [{ title: "Knives Out!", artist: "Nathan Johnson", src: "./films/Достать ножи 1/Nathan Johnson - Knives Out!.mp3" }],
     quote: "У этого дела есть одна странность: оно выглядит как бублик, внутри которого дырка от другого бублика",
@@ -246,7 +246,7 @@ const library = [
   },
   {
     id: "amelie", title: "Амели", originalTitle: "Amélie", year: "2001",
-    type: "Фильм", runtime: "2 ч 2 мин", accent: "#b33a2f", art: "pulp",
+    type: "Фильм", runtime: "2 ч 2 мин", accent: "#4f8a62", art: "pulp",
     poster: "./films/Амели/Обложка_амели.webp",
     music: [{ title: "Comptine d'un autre été", artist: "Yann Tiersen", src: "./films/Амели/Yann Tiersen -- Comptine d'un Autre été: L'Après-Midi.mp3" }],
     quote: "Без тебя сегодняшние чувства были бы лишь шелухой прошлых воспоминаний",
@@ -282,7 +282,7 @@ const library = [
   },
   {
     id: "american-beauty", title: "Красота по-американски", originalTitle: "American Beauty", year: "1999",
-    type: "Фильм", runtime: "2 ч 2 мин", accent: "#9d3c45", art: "pulp",
+    type: "Фильм", runtime: "2 ч 2 мин", accent: "#d59b83", art: "pulp",
     poster: "./films/Красота по-американски/Обложка_красота_по_американски.webp",
     music: [{ title: "Dead Already", artist: "Thomas Newman", src: "./films/Красота по-американски/Thomas Newman - Dead Already.mp3" }],
     quote: "Иногда вокруг так много красоты, что я чувствую, будто не могу ее вынести",
@@ -357,7 +357,7 @@ const library = [
   },
   {
     id: "schindlers-list", title: "Список Шиндлера", originalTitle: "Schindler's List", year: "1993",
-    type: "Фильм", runtime: "3 ч 15 мин", accent: "#8a3c38", art: "pulp",
+    type: "Фильм", runtime: "3 ч 15 мин", accent: "#858a90", art: "pulp",
     poster: "./films/Список Шиндлера/Обложка_список_шиндлера.webp",
     music: [{ title: "Theme from Schindler's List", artist: "John Williams", src: "./films/Список Шиндлера/John Williams - Theme from Schindler's List.mp3" }],
     quote: "Тот, кто спасает одну жизнь, спасает весь мир",
@@ -366,7 +366,7 @@ const library = [
   },
   {
     id: "emma", title: "Эмма", originalTitle: "Emma.", year: "2020",
-    type: "Фильм", runtime: "2 ч 4 мин", accent: "#b18472", art: "pulp",
+    type: "Фильм", runtime: "2 ч 4 мин", accent: "#91b86b", art: "pulp",
     poster: "./films/Эмма/Обложка_эмма.webp",
     quote: "Мне кажется, я лучше всех знаю, кто кому подходит, хотя сама никогда не любила",
     summary: "Молодая, богатая и уверенная в себе провинциальная аристократка Эмма Вудхаус убеждена, что отлично разбирается в людях. Она решает отказаться от собственного замужества, чтобы посвятить себя устройству личной жизни своих менее удачливых знакомых.",
@@ -374,7 +374,7 @@ const library = [
   },
   {
     id: "detachment", title: "Отрыв", originalTitle: "Spree", year: "2011",
-    type: "Фильм", runtime: "1 ч 38 мин", accent: "#536b7b", art: "cunk",
+    type: "Фильм", runtime: "1 ч 38 мин", accent: "#84629a", art: "cunk",
     poster: "./films/Отрыв/Обложка_отрыв.jpg",
     quote: "Легко быть равнодушным. Нужно мужество, чтобы тебе было не все равно",
     summary: "Генри Барт — учитель на замену, который сознательно избегает постоянной работы и привязанностей, чтобы не испытывать боли. Он получает временное назначение в неблагополучную государственную школу, где ученики и учителя давно потеряли веру в будущее.",
@@ -398,7 +398,7 @@ const library = [
   },
   {
     id: "fury", title: "Ярость", originalTitle: "Fury", year: "2014",
-    type: "Фильм", runtime: "2 ч 14 мин", accent: "#6f6841", art: "dogs",
+    type: "Фильм", runtime: "2 ч 14 мин", accent: "#73787b", art: "dogs",
     poster: "./films/Ярость/Обложка_ярость.jpeg",
     quote: "Идеалы мирные. История — серая и кровавая",
     summary: "Апрель 1945 года. Закаленный в боях экипаж американского танка под командованием сержанта Кольера продвигается вглубь нацистской Германии. К их уставшей группе присоединяется совсем молодой новобранец, которому предстоит за пару дней научиться выживать на передовой.",
