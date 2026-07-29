@@ -49,6 +49,25 @@ window.MEDIA = {
   godfather3Russian2: "https://vkvideo.ru/video_ext.php?oid=-239736027&id=456239040&hash=57319438e9ee47db&hd=4",
   godfather3English: "https://rutube.ru/play/embed/acd211205fe7df10c840df1cffbc8255/?skinColor=D57700",
 
+  amelieRussian: "https://vkvideo.ru/video_ext.php?oid=-203654344&id=456239378&hd=4",
+  snatchRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456239341&hd=4",
+  dragonTattooRussian: "https://vkvideo.ru/video_ext.php?oid=-234885366&id=456239705&hd=4",
+  greenMileRussian: "https://vkvideo.ru/video_ext.php?oid=-230698619&id=456239779&hd=4",
+  americanBeautyRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456243648&hd=4",
+  leonRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456243296&hd=4",
+  silenceLambsRussian: "https://vkvideo.ru/video_ext.php?oid=-227015598&id=456239645&hd=4",
+  deadPoetsRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456243946&hd=4",
+  shutterIslandRussian: "https://vkvideo.ru/video_ext.php?oid=-218359460&id=456241585&hd=4",
+  pianistRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456240007&hd=4",
+  shawshankRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456243258&hd=4",
+  catchMeRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456243284&hd=4",
+  schindlersListRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456243376&hd=4",
+  emmaRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456246573&hd=4",
+  detachmentEnglish: "https://vkvideo.ru/video_ext.php?oid=-194750953&id=456239018&hd=4",
+  eternalSunshineRussian: "https://vkvideo.ru/video_ext.php?oid=-227267093&id=456240040&hd=4",
+  livesOfOthersRussian: "https://vkvideo.ru/video_ext.php?oid=-220018529&id=456243952&hd=4",
+  furyRussian: "https://vkvideo.ru/video_ext.php?oid=-176233542&id=456241609&hd=4",
+
   generalMusic: [
     {
       title: "Deborah's Theme",

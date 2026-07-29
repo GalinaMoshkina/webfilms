@@ -1,5 +1,5 @@
 const media = window.MEDIA || {};
-const ASSET_VERSION = "20260724-3";
+const ASSET_VERSION = "20260729-1";
 
 const source = (label, shortLabel, embed, language = "ru") => ({
   label,
@@ -55,6 +55,7 @@ const library = [
     accent: "#bf302b",
     art: "dogs",
     poster: "./films/Бешеные псы/Обложка_бешеные_псы.jpeg",
+    music: [{ title: "Little Green Bag", artist: "George Baker Selection", src: "./films/Бешеные псы/George Baker Selection — Little Green Bag.mp3" }],
     quote: "Я не оставляю чаевые. Я не верю в них",
     summary:
       "Спланированное ограбление ювелирного магазина с самого начала идет не по плану. Выжившие преступники собираются на заброшенном складе, понимая, что среди них есть агент под прикрытием.",
@@ -210,6 +211,7 @@ const library = [
     id: "knives-out", title: "Достать ножи", originalTitle: "Knives Out", year: "2019",
     type: "Фильм", runtime: "2 ч 10 мин", accent: "#a48246", art: "pulp",
     poster: "./films/Достать ножи 1/Обложка_достать_ножи_1.jpg",
+    music: [{ title: "Knives Out!", artist: "Nathan Johnson", src: "./films/Достать ножи 1/Nathan Johnson - Knives Out!.mp3" }],
     quote: "У этого дела есть одна странность: оно выглядит как бублик, внутри которого дырка от другого бублика",
     summary: "Известный автор детективных романов Харлан Тромби празднует свое 85-летие в кругу семьи, а на следующее утро его находят мертвым в собственном кабинете. Разобраться в этом деле нанимают дотошного частного сыщика Бенуа Бланка.",
     sources: [
@@ -221,6 +223,7 @@ const library = [
     id: "glass-onion", title: "Достать ножи: Стеклянная луковица", originalTitle: "Glass Onion: A Knives Out Mystery", year: "2022",
     type: "Фильм", runtime: "2 ч 19 мин", accent: "#d28e3f", art: "cunk",
     poster: "./films/Достать ножи 2/Обложка_достать_ножи_2.jpg",
+    music: [{ title: "Theme from Glass Onion", artist: "Nathan Johnson", src: "./films/Достать ножи 2/Nathan -- Theme From Glass Onion A Knives Out Mystery.mp3" }],
     quote: "Когда игра становится реальностью, правила приходится переписывать на ходу",
     summary: "Эксцентричный миллиардер Майлз Брон собирает старых друзей на своем роскошном частном острове в Греции, чтобы устроить детективный квест. Но ситуация выходит из-под контроля, когда среди гостей оказывается знаменитый сыщик Бенуа Бланк.",
     sources: [
@@ -232,12 +235,173 @@ const library = [
     id: "wake-up-dead-man", title: "Достать ножи: Воскрешение покойника", originalTitle: "Wake Up Dead Man: A Knives Out Mystery", year: "2025",
     type: "Фильм", runtime: "2 ч 24 мин", accent: "#705644", art: "dogs",
     poster: "./films/Достать ножи 3/Обложка_достать_ножи_3.jpeg",
+    music: [{ title: "Wake Up Dead Man", artist: "Nathan Johnson", src: "./films/Достать ножи 3/Nathan Johnson -- Wake Up Dead Man.mp3" }],
     quote: "Нечные секреты настолько глубоки, что заставляют мертвецов открывать глаза",
     summary: "Детектив Бенуа Бланк берется за расследование нового запутанного преступления, которое сталкивает его с миром элиты и старыми семейными тайнами. Ему предстоит применить всю свою проницательность, чтобы отделить ложь от правды.",
     sources: [
       source("Русская озвучка", "Русский", media.wakeUpDeadManRussian),
       externalSource("Английская версия на внешнем сайте · требуется VPN", "English · ссылка", media.wakeUpDeadManEnglishPage)
     ]
+  },
+  {
+    id: "amelie", title: "Амели", originalTitle: "Amélie", year: "2001",
+    type: "Фильм", runtime: "2 ч 2 мин", accent: "#b33a2f", art: "pulp",
+    poster: "./films/Амели/Обложка_амели.webp",
+    music: [{ title: "Comptine d'un autre été", artist: "Yann Tiersen", src: "./films/Амели/Yann Tiersen -- Comptine d'un Autre été: L'Après-Midi.mp3" }],
+    quote: "Без тебя сегодняшние чувства были бы лишь шелухой прошлых воспоминаний",
+    summary: "Одинокая и мечтательная парижанка Амели случайно находит в своей квартире тайник со старыми детскими вещами незнакомца. Вернув находку владельцу и увидев его радость, она решает тайно менять жизни окружающих ее людей к лучшему.",
+    sources: [source("Русская озвучка", "Русский", media.amelieRussian)]
+  },
+  {
+    id: "snatch", title: "Большой куш", originalTitle: "Snatch", year: "2000",
+    type: "Фильм", runtime: "1 ч 44 мин", accent: "#b9893e", art: "dogs",
+    poster: "./films/Большой куш/Обложка_большой_куш.webp",
+    music: [{ title: "Disco Science", artist: "Mirwais", src: "./films/Большой куш/Mirwais - Disco Science.mp3" }],
+    quote: "Никогда не недооценивай предсказуемость тупизны",
+    summary: "В Лондоне пересекаются интересы грабителей, подпольных боксеров, русских гангстеров и еврейских ювелиров. Все они втягиваются в безумную криминальную гонку после того, как в городе пропадает похищенный в Антверпене огромный алмаз.",
+    sources: [source("Русская озвучка", "Русский", media.snatchRussian)]
+  },
+  {
+    id: "dragon-tattoo", title: "Девушка с татуировкой дракона", originalTitle: "The Girl with the Dragon Tattoo", year: "2011",
+    type: "Фильм", runtime: "2 ч 38 мин", accent: "#607985", art: "cunk",
+    poster: "./films/Девушка с татуировкой дракона/Обложка_девушка_с_татуировкой_дракона.jpg",
+    music: [{ title: "Immigrant Song", artist: "Led Zeppelin", src: "./films/Девушка с татуировкой дракона/Led Zeppelin - Immigrant Song.mp3" }],
+    quote: "Под подозрение попадает вся семья. И это делает их ужин невероятно уютным",
+    summary: "Опальный журналист Микаэль Блумквист получает заказ от стареющего промышленника — расследовать загадочное исчезновение его племянницы, случившееся сорок лет назад. В помощницы он берет замкнутую, но гениальную девушку-хакера Лисбет Саландер.",
+    sources: [source("Русская озвучка", "Русский", media.dragonTattooRussian)]
+  },
+  {
+    id: "green-mile", title: "Зелёная миля", originalTitle: "The Green Mile", year: "1999",
+    type: "Фильм", runtime: "3 ч 9 мин", accent: "#66806b", art: "cunk",
+    poster: "./films/Зеленая миля/Обложка_зеленая_миля.jpg",
+    music: [{ title: "The Green Mile", artist: "Thomas Newman", src: "./films/Зеленая миля/Thomas Newman - The Green Mile.mp3" }],
+    quote: "Я устал от человеческой злости, которой мир переполнен. Она как осколки стекла в моей голове",
+    summary: "Начальник блока смертников в федеральной тюрьме сталкивается с необычным заключенным — темнокожим гигантом Джоном Коффи, обвиненным в страшном преступлении. Вскоре надзиратель замечает, что этот пугливый арестант обладает редким и пугающим даром.",
+    sources: [source("Русская озвучка", "Русский", media.greenMileRussian)]
+  },
+  {
+    id: "american-beauty", title: "Красота по-американски", originalTitle: "American Beauty", year: "1999",
+    type: "Фильм", runtime: "2 ч 2 мин", accent: "#9d3c45", art: "pulp",
+    poster: "./films/Красота по-американски/Обложка_красота_по_американски.webp",
+    music: [{ title: "Dead Already", artist: "Thomas Newman", src: "./films/Красота по-американски/Thomas Newman - Dead Already.mp3" }],
+    quote: "Иногда вокруг так много красоты, что я чувствую, будто не могу ее вынести",
+    summary: "Лестер Бернем переживает глубокий кризис среднего возраста: на работе его не ценят, а отношения с женой и дочерью-подростком давно зашли в тупик. Все меняется, когда он знакомится с юной подругой своей дочери и решает круто изменить жизнь.",
+    sources: [source("Русская озвучка", "Русский", media.americanBeautyRussian)]
+  },
+  {
+    id: "leon", title: "Леон", originalTitle: "Léon", year: "1994",
+    type: "Фильм", runtime: "2 ч 13 мин", accent: "#7f714d", art: "dogs",
+    poster: "./films/Леон/Обложка_леон.webp",
+    music: [{ title: "Shape of My Heart", artist: "Sting", src: "./films/Леон/Sting - Shape of my heart.mp3" }],
+    quote: "Жизнь всегда такая дерьмовая, или только когда ты ребенок? — Всегда",
+    summary: "Профессиональный наемный убийца Леон ведет замкнутый и размеренный образ жизни в Нью-Йорке. Его привычный мир рушится, когда он решает спасти соседскую девочку-подростка Матильду, чью семью расстреляли коррумпированные полицейские.",
+    sources: [source("Русская озвучка", "Русский", media.leonRussian)]
+  },
+  {
+    id: "silence-of-the-lambs", title: "Молчание ягнят", originalTitle: "The Silence of the Lambs", year: "1991",
+    type: "Фильм", runtime: "1 ч 58 мин", accent: "#9a7440", art: "dogs",
+    poster: "./films/Молчание ягнят/Обложка_молчание_ягнят.webp",
+    music: [{ title: "Main Title", artist: "Howard Shore", src: "./films/Молчание ягнят/Howard Shore - Main Title.mp3" }],
+    quote: "Один раз меня пытался опросить агент по переписи населения. Я съел его печень с бобами и хорошим кьянти",
+    summary: "Молодая курсантка ФБР Кларисса Старлинг получает задание встретиться с заключенным в психиатрическую больницу гениальным убийцей-каннибалом Ганнибалом Лектером. Ей нужно завоевать его доверие, чтобы с его помощью составить психологический портрет другого маньяка.",
+    sources: [source("Русская озвучка", "Русский", media.silenceLambsRussian)]
+  },
+  {
+    id: "dead-poets-society", title: "Общество мёртвых поэтов", originalTitle: "Dead Poets Society", year: "1989",
+    type: "Фильм", runtime: "2 ч 8 мин", accent: "#8c6841", art: "pulp",
+    poster: "./films/Общество мертвых поэтов/Обложка_общество_мертвых_поэтов.webp",
+    music: [{ title: "Carpe Diem", artist: "Maurice Jarre", src: "./films/Общество мертвых поэтов/Maurice Jarre - Carpe Diem.mp3" }],
+    quote: "Ловите мгновение. Делайте свои жизни необыкновенными",
+    summary: "В консервативную американскую академию с жесткими традициями приходит новый преподаватель английской словесности Джон Китинг. Вместо зазубривания правил он учит воспитанников мыслить самостоятельно, игнорировать шаблоны и ценить каждый миг.",
+    sources: [source("Русская озвучка", "Русский", media.deadPoetsRussian)]
+  },
+  {
+    id: "shutter-island", title: "Остров проклятых", originalTitle: "Shutter Island", year: "2010",
+    type: "Фильм", runtime: "2 ч 18 мин", accent: "#4f6974", art: "cunk",
+    poster: "./films/Остров проклятых/Обложка_остров_проклятых.jpeg",
+    music: [{ title: "On the Nature of Daylight", artist: "Max Richter", src: "./films/Остров проклятых/Max Richter - On the nature of daylight.mp3" }],
+    quote: "Что лучше: жить монстром или умереть человеком?",
+    summary: "Двое судебных приставов отправляются на изолированный остров в штате Массачусетс, где расположена закрытая клиника для особо опасных душевнобольных преступников. Им предстоит расследовать таинственное исчезновение пациентки из запертой палаты.",
+    sources: [source("Русская озвучка", "Русский", media.shutterIslandRussian)]
+  },
+  {
+    id: "the-pianist", title: "Пианист", originalTitle: "The Pianist", year: "2002",
+    type: "Фильм", runtime: "2 ч 30 мин", accent: "#7f7568", art: "dogs",
+    poster: "./films/Пианист/Обложка_пианист.webp",
+    music: [{ title: "Nocturne in C-sharp Minor", artist: "Frédéric Chopin", src: "./films/Пианист/Nocturne in C-sharp minor, Op. posth., No. 20.mp3" }],
+    quote: "Если вы нас уколете — разве у нас не потечет кровь? Если вы нас пощекочете — разве мы не станем смеяться?",
+    summary: "Реальная история Владислава Шпильмана, одного из лучших пианистов Польши 1930-х годов. Его привычная жизнь рушится с началом Второй мировой войны, и музыканту приходится пройти через все ужасы варшавского гетто, пытаясь спастись от депортации.",
+    sources: [source("Русская озвучка", "Русский", media.pianistRussian)]
+  },
+  {
+    id: "shawshank-redemption", title: "Побег из Шоушенка", originalTitle: "The Shawshank Redemption", year: "1994",
+    type: "Фильм", runtime: "2 ч 22 мин", accent: "#786746", art: "dogs",
+    poster: "./films/Побег из Шоушенка/Обложка_побег_из_шоушенка.jpg",
+    music: [
+      { title: "Shawshank Redemption (Stoic Theme)", artist: "Thomas Newman", src: "./films/Побег из Шоушенка/Thomas Newman -- Shawshank Redemption (Stoic Theme).mp3" },
+      { title: "Погоня", artist: "Смешарики", src: "./films/Побег из Шоушенка/Смешарики - Погоня.mp3" }
+    ],
+    quote: "Страх делает тебя пленником. Надежда дает тебе свободу",
+    summary: "Успешный банкир Энди Дюфрейн получает пожизненный срок за преступление, которого он не совершал, и попадает в одну из самых мрачных тюрем Новой Англии. Столкнувшись с жестокостью заключенных и администрации, он отказывается мириться со своей судьбой.",
+    sources: [source("Русская озвучка", "Русский", media.shawshankRussian)]
+  },
+  {
+    id: "catch-me-if-you-can", title: "Поймай меня, если сможешь", originalTitle: "Catch Me If You Can", year: "2002",
+    type: "Фильм", runtime: "2 ч 21 мин", accent: "#4c8092", art: "cunk",
+    poster: "./films/Поймай меня если сможешь/Обложка_поймай_меня_если_сможешь.webp",
+    music: [{ title: "Catch Me If You Can", artist: "John Williams", src: "./films/Поймай меня если сможешь/John Williams - OST Catch Me If You Can.mp3" }],
+    quote: "Две мышки упали в ведро с молоком. Первая опустила лапки и утонула. Вторая боролась так сильно, что взбила масло и выбралась",
+    summary: "Молодой и невероятно обаятельный Фрэнк Абигнейл виртуозно подделывает чеки и успевает поработать врачом, адвокатом и пилотом гражданской авиации еще до своего совершеннолетия. По его следу неотступно идет опытный агент ФБР Карл Хэнрэтти.",
+    sources: [source("Русская озвучка", "Русский", media.catchMeRussian)]
+  },
+  {
+    id: "schindlers-list", title: "Список Шиндлера", originalTitle: "Schindler's List", year: "1993",
+    type: "Фильм", runtime: "3 ч 15 мин", accent: "#8a3c38", art: "pulp",
+    poster: "./films/Список Шиндлера/Обложка_список_шиндлера.webp",
+    music: [{ title: "Theme from Schindler's List", artist: "John Williams", src: "./films/Список Шиндлера/John Williams - Theme from Schindler's List.mp3" }],
+    quote: "Тот, кто спасает одну жизнь, спасает весь мир",
+    summary: "Реальная история немецкого бизнесмена Оскара Шиндлера, который прибывает в оккупированную Польшу, чтобы нажиться на начавшейся войне. Однако, видя нарастающие преследования еврейского населения, он решает использовать все свои деньги и связи ради их спасения.",
+    sources: [source("Русская озвучка", "Русский", media.schindlersListRussian)]
+  },
+  {
+    id: "emma", title: "Эмма", originalTitle: "Emma.", year: "2020",
+    type: "Фильм", runtime: "2 ч 4 мин", accent: "#b18472", art: "pulp",
+    poster: "./films/Эмма/Обложка_эмма.webp",
+    quote: "Мне кажется, я лучше всех знаю, кто кому подходит, хотя сама никогда не любила",
+    summary: "Молодая, богатая и уверенная в себе провинциальная аристократка Эмма Вудхаус убеждена, что отлично разбирается в людях. Она решает отказаться от собственного замужества, чтобы посвятить себя устройству личной жизни своих менее удачливых знакомых.",
+    sources: [source("Русская озвучка", "Русский", media.emmaRussian)]
+  },
+  {
+    id: "detachment", title: "Отрыв", originalTitle: "Detachment", year: "2011",
+    type: "Фильм", runtime: "1 ч 38 мин", accent: "#536b7b", art: "cunk",
+    poster: "./films/Отрыв/Обложка_отрыв.jpg",
+    quote: "Легко быть равнодушным. Нужно мужество, чтобы тебе было не все равно",
+    summary: "Генри Барт — учитель на замену, который сознательно избегает постоянной работы и привязанностей, чтобы не испытывать боли. Он получает временное назначение в неблагополучную государственную школу, где ученики и учителя давно потеряли веру в будущее.",
+    sources: [source("Оригинальная дорожка", "English", media.detachmentEnglish, "en")]
+  },
+  {
+    id: "eternal-sunshine", title: "Вечное сияние чистого разума", originalTitle: "Eternal Sunshine of the Spotless Mind", year: "2004",
+    type: "Фильм", runtime: "1 ч 48 мин", accent: "#5d8294", art: "cunk",
+    poster: "./films/Вечное сияние чистого разума/Обложка_вечное_сияние_чистого_разума.jpg",
+    quote: "Можно стереть любовь из памяти. Вытравить из сердца — это уже другая история",
+    summary: "Джоэл и Клементина решают воспользоваться необычной услугой и стереть из памяти все воспоминания друг о друге после тяжелого разрыва. Однако в процессе процедуры Джоэл понимает, что все еще любит Клементину, и отчаянно пытается спасти ее образ в своем подсознании.",
+    sources: [source("Русская озвучка", "Русский", media.eternalSunshineRussian)]
+  },
+  {
+    id: "lives-of-others", title: "Жизнь других", originalTitle: "The Lives of Others", year: "2006",
+    type: "Фильм", runtime: "2 ч 17 мин", accent: "#7a725d", art: "dogs",
+    poster: "./films/Жизнь других/Обложка_жизнь_других.webp",
+    quote: "Если вы будете слушать эту музыку достаточно долго, вы не сможете оставаться прежним человеком",
+    summary: "Восточный Берлин, 1984 год. Капитан тайной полиции Штази Герд Визлер получает задание установить тотальную прослушку в квартире известного драматурга, подозреваемого в нелояльности к коммунистическому режиму. Постепенно чужая жизнь начинает менять самого шпиона.",
+    sources: [source("Русская озвучка", "Русский", media.livesOfOthersRussian)]
+  },
+  {
+    id: "fury", title: "Ярость", originalTitle: "Fury", year: "2014",
+    type: "Фильм", runtime: "2 ч 14 мин", accent: "#6f6841", art: "dogs",
+    poster: "./films/Ярость/Обложка_ярость.jpeg",
+    quote: "Идеалы мирные. История — серая и кровавая",
+    summary: "Апрель 1945 года. Закаленный в боях экипаж американского танка под командованием сержанта Кольера продвигается вглубь нацистской Германии. К их уставшей группе присоединяется совсем молодой новобранец, которому предстоит за пару дней научиться выживать на передовой.",
+    sources: [source("Русская озвучка", "Русский", media.furyRussian)]
   },
   {
     id: "the-godfather", title: "Крёстный отец", originalTitle: "The Godfather", year: "1972",

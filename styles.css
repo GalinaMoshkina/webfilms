@@ -553,7 +553,7 @@ body {
   background-color: #080706;
   background-image:
     linear-gradient(to bottom, transparent 0, transparent 38%, #080706 100%),
-    url("./ui-assets/background-top.png");
+    url("./ui-assets/background-top.png?v=20260729-1");
   background-position: left top, left top;
   background-size: 100% 112vh, 100% auto;
   background-repeat: no-repeat, no-repeat;
