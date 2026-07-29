@@ -444,7 +444,9 @@ body::after { right: 0; clip-path: polygon(0 0, 100% 0, 100% 100%, 32% 100%); tr
 .film-card:hover,
 .film-card:focus-visible {
   min-height: 280px;
-  box-shadow: inset 2px 0 var(--accent);
+  box-shadow:
+    inset 2px 0 var(--accent),
+    0 0 42px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 .card-number { font-size: 1rem; font-weight: 600; color: #8f887d; }
 .film-card:hover .card-number { color: var(--accent); }
@@ -475,6 +477,57 @@ body::after { right: 0; clip-path: polygon(0 0, 100% 0, 100% 100%, 32% 100%); tr
 .film-card:focus-visible .hover-summary { margin-top: 16px; }
 .personal-note { margin-top: 12px; }
 .card-arrow { font-size: 2rem; font-weight: 200; }
+.watched-toggle {
+  position: absolute;
+  z-index: 5;
+  right: 74px;
+  top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  cursor: pointer;
+  opacity: .58;
+  transition: color .25s ease, opacity .25s ease, transform .25s ease;
+}
+.watched-toggle > span {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: .72rem;
+}
+.watched-toggle small {
+  font-size: .62rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.watched-toggle:hover,
+.watched-toggle:focus-visible {
+  color: var(--accent);
+  opacity: 1;
+  outline: none;
+  transform: translateY(-1px);
+}
+.film-card.watched {
+  box-shadow: inset 2px 0 color-mix(in srgb, var(--accent) 75%, white);
+}
+.film-card.watched::before {
+  opacity: .2;
+  transform: none;
+}
+.film-card.watched .watched-toggle {
+  color: var(--accent);
+  opacity: 1;
+}
+.film-card.watched:hover,
+.film-card.watched:focus-visible {
+  box-shadow:
+    inset 3px 0 var(--accent),
+    0 0 54px color-mix(in srgb, var(--accent) 30%, transparent);
+}
 
 .soundtrack {
   height: 108px;
@@ -687,20 +740,31 @@ body.watching .watch-heading > p:last-child {
 #music-next { background-image: url("./ui-assets/next.png"); }
 
 .round-button {
-  width: 72px;
-  height: 72px;
+  width: 58px;
+  height: 58px;
   border: 0;
   border-radius: 50%;
   overflow: hidden;
-  background: url("./ui-assets/play.png") center / contain no-repeat;
+  background: #dfa84f;
+  color: #17110b;
   font-size: 0;
+  box-shadow: 0 0 22px rgba(223, 168, 79, .12);
+}
+.round-button #music-icon {
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 1;
+  transform: translateX(1px);
 }
 .round-button.playing {
   width: 58px;
   height: 58px;
   border-radius: 50%;
   background: #dfa84f;
+}
+.round-button.playing #music-icon {
   font-size: .8rem;
+  transform: none;
 }
 
 .volume-icon {
@@ -745,4 +809,9 @@ body.watching .watch-heading > p:last-child {
   }
   .record { width: 48px; height: 48px; }
   .round-button { width: 48px; height: 48px; }
+  .watched-toggle {
+    right: 4px;
+    top: 8px;
+  }
+  .watched-toggle small { display: none; }
 }

@@ -1,5 +1,6 @@
 const media = window.MEDIA || {};
-const ASSET_VERSION = "20260729-1";
+const ASSET_VERSION = "20260729-2";
+const WATCHED_STORAGE_KEY = "webfilms-watched";
 
 const source = (label, shortLabel, embed, language = "ru") => ({
   label,
@@ -372,7 +373,7 @@ const library = [
     sources: [source("Русская озвучка", "Русский", media.emmaRussian)]
   },
   {
-    id: "detachment", title: "Отрыв", originalTitle: "Detachment", year: "2011",
+    id: "detachment", title: "Отрыв", originalTitle: "Spree", year: "2011",
     type: "Фильм", runtime: "1 ч 38 мин", accent: "#536b7b", art: "cunk",
     poster: "./films/Отрыв/Обложка_отрыв.jpg",
     quote: "Легко быть равнодушным. Нужно мужество, чтобы тебе было не все равно",
@@ -446,6 +447,25 @@ const app = document.querySelector("#app");
 let activeVideo = null;
 let musicController = null;
 
+function getWatchedFilms() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem(WATCHED_STORAGE_KEY) || "[]"));
+  } catch {
+    return new Set();
+  }
+}
+
+function setFilmWatched(id, watched) {
+  const films = getWatchedFilms();
+  watched ? films.add(id) : films.delete(id);
+  try {
+    localStorage.setItem(WATCHED_STORAGE_KEY, JSON.stringify([...films]));
+  } catch {
+    // В приватном режиме хранилище может быть недоступно.
+  }
+  return watched;
+}
+
 function escapeHtml(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -460,8 +480,10 @@ function versionedAsset(path = "") {
 }
 
 function cardTemplate(item, index) {
+  const watched = getWatchedFilms().has(item.id);
   return `
-    <a class="film-card ${item.art}" href="#/watch/${item.id}"
+    <a class="film-card ${item.art} ${watched ? "watched" : ""}" href="#/watch/${item.id}"
+      data-film-id="${escapeHtml(item.id)}"
       data-search="${escapeHtml(normalizeSearch(`${item.title} ${item.originalTitle} ${item.year} ${item.type}`))}"
       style="--accent:${item.accent}; --delay:${index * 80}ms"
       aria-label="Смотреть ${escapeHtml(item.title)}">
@@ -477,21 +499,50 @@ function cardTemplate(item, index) {
         <p class="hover-summary">${escapeHtml(item.summary)}</p>
         <p class="personal-note">«${escapeHtml(item.quote)}»</p>
       </div>
+      <span class="watched-toggle" role="button" tabindex="0"
+        aria-pressed="${watched}" aria-label="${watched ? "Убрать отметку о просмотре" : "Отметить фильм просмотренным"}">
+        <span aria-hidden="true">${watched ? "✓" : ""}</span>
+        <small>${watched ? "Просмотрено" : "Отметить"}</small>
+      </span>
       <span class="card-arrow" aria-hidden="true"></span>
     </a>`;
 }
 
 function renderHome() {
+  const sortedLibrary = [...library].sort((first, second) =>
+    first.title.localeCompare(second.title, "ru", { sensitivity: "base" })
+  );
   document.title = "Фильмотека";
   app.innerHTML = `
     <section class="hero">
       <h1>Выбери историю<br><em>на этот вечер</em></h1>
     </section>
     <section class="library" aria-label="Фильмотека">
-      ${library.map(cardTemplate).join("")}
+      ${sortedLibrary.map(cardTemplate).join("")}
       <p class="no-results" id="no-results" hidden>Ничего не нашлось. Попробуй другое название.</p>
     </section>`;
+  setupWatchedButtons();
   applySearch(document.querySelector("#film-search").value);
+}
+
+function setupWatchedButtons() {
+  document.querySelectorAll(".watched-toggle").forEach((button) => {
+    const toggle = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const card = button.closest(".film-card");
+      const watched = setFilmWatched(card.dataset.filmId, !card.classList.contains("watched"));
+      card.classList.toggle("watched", watched);
+      button.setAttribute("aria-pressed", String(watched));
+      button.setAttribute("aria-label", watched ? "Убрать отметку о просмотре" : "Отметить фильм просмотренным");
+      button.querySelector("span").textContent = watched ? "✓" : "";
+      button.querySelector("small").textContent = watched ? "Просмотрено" : "Отметить";
+    };
+    button.addEventListener("click", toggle);
+    button.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") toggle(event);
+    });
+  });
 }
 
 function isRemoteSource(src = "") {
